@@ -18,6 +18,6 @@ from django.urls import path,include
 from fuzzyapp import  urls as app_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('autocomplete/', include(app_urls)),
+    path('', include(app_urls)),
 
 ]

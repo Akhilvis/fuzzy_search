@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('search/', views.fuzzy_search, name='fuzzy-search'),
     # path('autocomplete/', include(app_urls)),
 ]

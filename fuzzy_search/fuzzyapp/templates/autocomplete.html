@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Autocomplete</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
 
 </head>
 <body>
@@ -52,9 +51,27 @@
       "Scala",
       "Scheme"
     ];
-    $( "#tags" ).autocomplete({
-      source: availableTags
-    });
+<!--    $( "#tags" ).autocomplete({-->
+<!--      source: availableTags-->
+<!--    });-->
+
+            jQuery("#tags").autocomplete({
+                source: function (request, response) {
+                    jQuery.get("search", {
+                        word: request.term
+                    }, function (data) {
+                        // assuming data is a JavaScript array such as
+                        // ["one@abc.de", "onf@abc.de","ong@abc.de"]
+                        // and not a string
+                        response(data);
+                    });
+                },
+                minLength: 3
+            });
+
+
+
+
   } );
   </script>
 
