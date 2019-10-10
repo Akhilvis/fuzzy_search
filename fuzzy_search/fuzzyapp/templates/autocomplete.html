@@ -60,10 +60,11 @@
                     jQuery.get("search", {
                         word: request.term
                     }, function (data) {
+                        console.log(data['autocomplete'])
                         // assuming data is a JavaScript array such as
                         // ["one@abc.de", "onf@abc.de","ong@abc.de"]
                         // and not a string
-                        response(data);
+                        response(data['autocomplete']);
                     });
                 },
                 minLength: 3
