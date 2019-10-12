@@ -57,7 +57,7 @@ def fuzzyfinder(user_input, collection):
     print ('length of suggestions.....', len(suggestions))
     weighted_list = find_weighted_average(suggestions)
     print (888888888888888888888888,weighted_list)
-    ranked_suggetions = [x for x in sorted(weighted_list, reverse=True)]
+    ranked_suggetions = [x for _, x in sorted(weighted_list, reverse=True)]
     print('########################################################')
     print (ranked_suggetions)
     print('#######################-------#################################')
@@ -80,14 +80,14 @@ def find_weighted_average(suggestions):
     weighted_list = []
     # Linear Equation to find weighted average
     length_factor = .5
-    position_factor = .5
+    position_factor = 100
     view_count_factor = .0001
+
 
     for word_list in suggestions:
         print ('loop.........',word_list)
-        rank  = (length_factor*word_list[0]) + (position_factor*word_list[1]) + (view_count_factor*word_list[2])
+        rank  = (length_factor*word_list[0]) + (position_factor*(20 - word_list[1])) + (view_count_factor*word_list[2])
 
         weighted_list.append((rank, word_list[3]))
-        rank = 0
     print ('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', weighted_list)
     return weighted_list
