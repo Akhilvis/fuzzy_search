@@ -14,33 +14,8 @@ def fuzzy_search(request, *args, **kwargs):
     print ('fuzzy_search......................', request.GET.get('word', -1))
     word = request.GET.get('word', '')
 
-    autocomplete = [
-        "ActionScript",
-        "AppleScript",
-        "Asp",
-        "BASIC",
-        "C",
-        "C++",
-        "Clojure",
-        "COBOL",
-        "ColdFusion",
-        "Erlang",
-        "Fortran",
-        "Groovy",
-        "Haskell",
-        "Java",
-        "JavaScript",
-        "Lisp",
-        "Perl",
-        "PHP",
-        "Python",
-        "Ruby",
-        "Scala",
-        "Scheme"
-    ]
-
     dict_list = tsv_file_reader()
-    auto_list = fuzzyfinder(word, dict_list)[:10]
+    auto_list = fuzzyfinder(word, dict_list)[:25]
     print (auto_list)
 
     return JsonResponse({'success': True, 'autocomplete': auto_list})
