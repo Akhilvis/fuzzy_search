@@ -91,3 +91,4 @@ def find_weighted_average(suggestions):
         weighted_list.append((rank, word_list[3]))
     print ('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', weighted_list)
     return weighted_list
+
