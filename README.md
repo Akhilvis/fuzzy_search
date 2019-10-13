@@ -37,7 +37,9 @@ Inorder to find weighted average , making a linear equation with a multipliyng f
 
 we are assuing maximum word length as 20 and substracting Position of the occurence of first letter from 20, since words starts with given input should get higher rank.
 
+Hosted a demo in heroku. Here s the link
 
+https://dashboard.heroku.com/apps/fuzzy-autocomplete
             
             
 
