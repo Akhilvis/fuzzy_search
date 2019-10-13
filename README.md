@@ -39,7 +39,7 @@ we are assuing maximum word length as 20 and substracting Position of the occure
 
 Hosted a demo in heroku. Here s the link
 
-https://dashboard.heroku.com/apps/fuzzy-autocomplete
+https://fuzzy-autocomplete.herokuapp.com/
             
             
 
